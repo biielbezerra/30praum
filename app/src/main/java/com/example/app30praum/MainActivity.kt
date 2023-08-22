@@ -17,12 +17,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             _30praumTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+                Surface{
+                    MyFirstComposable()
                 }
             }
         }
@@ -30,17 +26,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun MyFirstComposable(){
+    Text(text = "My first composable")
 }
 
-@Preview(showBackground = true)
+@Preview()
 @Composable
-fun GreetingPreview() {
+fun MyFirstComposablePreview(){
     _30praumTheme {
-        Greeting("Android")
+        Surface {
+            MyFirstComposable()
+        }
     }
 }
