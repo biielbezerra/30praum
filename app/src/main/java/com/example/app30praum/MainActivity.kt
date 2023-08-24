@@ -15,10 +15,12 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Checkbox
@@ -46,6 +48,7 @@ import androidx.compose.ui.unit.sp
 import com.example.app30praum.ui.theme._30praumTheme
 import com.example.app30praum.ui.theme.primaryGray
 import kotlinx.coroutines.coroutineScope
+import kotlin.math.max
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,48 +66,49 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun ProductItem() {
-    Box(
-        modifier = Modifier
-            .padding(50.dp)
-            .height(265.dp)
-            .width(200.dp)
-            .clip(RoundedCornerShape(18.dp))
-            .background(color = primaryGray)
-    ) {
-        Column(
-            verticalArrangement = Arrangement.Center,
+    Surface(Modifier.padding(20.dp),shape = RoundedCornerShape(30.dp), shadowElevation = 6.dp) {
+        Box(
             modifier = Modifier
-                .fillMaxHeight()
-                .fillMaxWidth()
+                .heightIn(min = 250.dp, max = 260.dp)
+                .widthIn(min = 180.dp, max = 200.dp)
+                .background(color = primaryGray)
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_launcher_background),
-                contentDescription = null, modifier = Modifier
-                    .size(180.dp)
-                    .padding(2.dp)
-                    .align(CenterHorizontally)
-            )
-            Column(modifier = Modifier.padding(12.dp, 0.dp).fillMaxWidth()) {
-                Text(
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier
-                        .align(CenterHorizontally),
-                    text = LoremIpsum(8).values.first(),
-                    color = Color.White,
-                    fontWeight = FontWeight(700),
-                    fontSize = 16.sp,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
+            Column(
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .fillMaxWidth()
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_launcher_background),
+                    contentDescription = null, modifier = Modifier
+                        .size(180.dp)
+                        .padding(2.dp)
+                        .align(CenterHorizontally)
                 )
-                Text(
-                    text = "R$000,00",
-                    color = Color.White,
-                    fontWeight = FontWeight(400),
-                    fontSize = 14.sp,
-                    modifier = Modifier.padding(2.dp)
-                )
+                Column(modifier = Modifier
+                    .padding(12.dp, 0.dp)
+                    .fillMaxWidth()) {
+                    Text(
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier
+                            .align(CenterHorizontally),
+                        text = LoremIpsum(8).values.first(),
+                        color = Color.White,
+                        fontWeight = FontWeight(700),
+                        fontSize = 18.sp,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    Text(
+                        text = "R$000,00",
+                        color = Color.White,
+                        fontWeight = FontWeight(400),
+                        fontSize = 14.sp,
+                        modifier = Modifier.padding(2.dp)
+                    )
+                }
             }
         }
-
     }
 }
