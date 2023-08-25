@@ -8,6 +8,4 @@ class Product(
     val name: String,
     val price: BigDecimal,
     @DrawableRes val image: Int
-) {
-
-}
+)
