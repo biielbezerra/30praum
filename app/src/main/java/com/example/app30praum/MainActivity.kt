@@ -79,7 +79,6 @@ fun App() {
                 ArtistSection()
                 ProductSection()
                 ProductSection()
-
             }
         }
     }
