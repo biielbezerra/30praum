@@ -31,8 +31,8 @@ val sampleProductsBermudas = listOf(
         R.drawable.bermuda
     ),
     Product(
-        name = "Camiseta",
-        price = BigDecimal("129.90"),
+        name = "Bermuda",
+        price = BigDecimal("229.90"),
         image = R.drawable.berma_tue
     )
 )

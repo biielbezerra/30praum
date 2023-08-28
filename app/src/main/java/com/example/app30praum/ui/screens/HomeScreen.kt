@@ -31,7 +31,7 @@ fun HomeScreen() {
         ProductSection("Camisetas", sampleProductsCamisetas)
         ProductSection("Bermudas", sampleProductsBermudas)
         ProductSection(title = "Calças", products = listOf(Product(
-            name = "Bermuda",
+            name = "Calça",
             price = BigDecimal("229.90"),
             R.drawable.calca
         )))
