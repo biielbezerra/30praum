@@ -5,11 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,7 +14,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -29,8 +25,6 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -43,10 +37,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -58,9 +48,7 @@ import com.example.app30praum.ui.theme.Purple40
 import com.example.app30praum.ui.theme.Purple80
 import com.example.app30praum.ui.theme._30praumTheme
 import com.example.app30praum.ui.theme.primaryGray
-import kotlinx.coroutines.coroutineScope
 import java.math.BigDecimal
-import kotlin.math.max
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -103,17 +91,17 @@ fun ProductSection() {
             ProductItem(Product(
                 name = "Camiseta",
                 price = BigDecimal("129.90"),
-                image = R.drawable.ieu_2580_1536x2048_png
+                image = R.drawable.borboletue
             ))
             ProductItem(Product(
                 name = "Camiseta",
                 price = BigDecimal("129.90"),
-                image = R.drawable.metralhadora_preta_frente_1000x1000_png
+                image = R.drawable.camisetabranca
             ))
             ProductItem(Product(
                 name = "Bermuda",
                 price = BigDecimal("229.90"),
-                image = R.drawable.bermuda_verde_frente_1000x1000_png
+                image = R.drawable.bermuda
             ))
         }
     }
