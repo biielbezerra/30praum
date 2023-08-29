@@ -66,7 +66,8 @@ val sampleProducts = listOf(
         image = "https://i.imgur.com/D3WSYsu.png"
     ),
     *sampleCamisetas.toTypedArray(),
-    *sampleBermudas.toTypedArray()
+    *sampleBermudas.toTypedArray(),
+    *sampleCalcas.toTypedArray()
 )
 
 val sampleProductsSections = mapOf(
