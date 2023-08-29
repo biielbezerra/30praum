@@ -1,6 +1,5 @@
 package com.example.app30praum.ui.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,9 +25,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.example.app30praum.R
 import com.example.app30praum.extensions.toBrazilianCurrency
 import com.example.app30praum.model.Product
+import com.example.app30praum.ui.theme._30praumTheme
 import com.example.app30praum.ui.theme.primaryGray
 import java.math.BigDecimal
 
@@ -47,13 +48,14 @@ fun ProductItem(product: Product) {
                     .fillMaxHeight()
                     .fillMaxWidth()
             ) {
-                Image(
-                    painter = painterResource(id = product.image),
+                AsyncImage(
+                    model = product.image,
                     contentDescription = null, modifier = Modifier
                         .size(180.dp)
                         .padding(2.dp)
                         .align(Alignment.CenterHorizontally),
-                    contentScale = ContentScale.Fit
+                    contentScale = ContentScale.Fit,
+                    placeholder = painterResource(id = R.drawable.placeholder)
                 )
                 Column(
                     modifier = Modifier
@@ -87,11 +89,15 @@ fun ProductItem(product: Product) {
 @Preview(showBackground = true)
 @Composable
 private fun ProductItemPreview() {
-    ProductItem(
-        Product(
-            name = "Camiseta",
-            price = BigDecimal("129.90"),
-            R.drawable.ic_launcher_background
-        )
-    )
+    _30praumTheme {
+        Surface {
+            ProductItem(
+                Product(
+                    name = "Camiseta",
+                    price = BigDecimal("129.90"),
+                    "https://i.imgur.com/Aq07Hrs.png"
+                )
+            )
+        }
+    }
 }

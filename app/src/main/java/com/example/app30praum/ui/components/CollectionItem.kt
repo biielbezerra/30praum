@@ -1,7 +1,6 @@
 package com.example.app30praum.ui.components
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -32,12 +31,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.example.app30praum.R
-import com.example.app30praum.model.Artist
+import com.example.app30praum.model.Collection
+import com.example.app30praum.ui.theme._30praumTheme
 import com.example.app30praum.ui.theme.primaryGray
 
 @Composable
-fun ArtistItem(artist: Artist) {
+fun CollectionItem(collection: Collection) {
     Surface(shape = RoundedCornerShape(30.dp), shadowElevation = 6.dp) {
         Row(
             modifier = Modifier
@@ -58,8 +59,8 @@ fun ArtistItem(artist: Artist) {
                         )
                     )
             ) {
-                Image(
-                    painter = painterResource(artist.image),
+                AsyncImage(
+                    model = collection.image,
                     contentDescription = null, modifier = Modifier
                         .size(imageSize)
                         .align(Alignment.Center)
@@ -74,7 +75,8 @@ fun ArtistItem(artist: Artist) {
                                     )
                                 )
                             ), CircleShape
-                        )
+                        ),
+                    placeholder = painterResource(id = R.drawable.placeholder)
                 )
             }
             Spacer(modifier = Modifier.width(imageSize / 2))
@@ -87,7 +89,7 @@ fun ArtistItem(artist: Artist) {
             ) {
                 Column{
                     Text(
-                        text = artist.name,
+                        text = collection.name,
                         color = Color.Black,
                         fontSize = 35.sp,
                         fontWeight = FontWeight(550),
@@ -101,13 +103,17 @@ fun ArtistItem(artist: Artist) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-private fun ArtistCardPreview() {
-    ArtistItem(
-        Artist(
-            name = "Matuê",
-            R.drawable.matue_card
-        )
-    )
+private fun CollectionCardPreview() {
+    _30praumTheme {
+        Surface {
+            CollectionItem(
+                Collection(
+                    name = "Matuê",
+                    image = "https://i.imgur.com/yyyRJch.png"
+                )
+            )
+        }
+    }
 }

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,10 +15,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.app30praum.R
 import com.example.app30praum.model.Product
-import com.example.app30praum.sampledata.sampleProductsCamisetas
-import java.math.BigDecimal
+import com.example.app30praum.sampledata.sampleCamisetas
+import com.example.app30praum.sampledata.sampleProducts
+import com.example.app30praum.ui.theme._30praumTheme
 
 @Composable
 fun ProductSection(
@@ -53,5 +54,9 @@ fun ProductSection(
 @Preview(showBackground = true)
 @Composable
 private fun ProductSectionPreview() {
-    ProductSection("Camisetas", products = sampleProductsCamisetas)
+    _30praumTheme {
+        Surface {
+            ProductSection("Camisetas", products = sampleProducts)
+        }
+    }
 }
