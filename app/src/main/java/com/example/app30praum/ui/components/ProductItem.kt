@@ -38,8 +38,8 @@ fun ProductItem(product: Product) {
     Surface(shape = RoundedCornerShape(30.dp), shadowElevation = 6.dp) {
         Box(
             modifier = Modifier
-                .heightIn(min = 250.dp, max = 260.dp)
-                .widthIn(min = 180.dp, max = 200.dp)
+                .heightIn(min = 240.dp, max = 250.dp)
+                .widthIn(min = 170.dp, max = 190.dp)
                 .background(color = primaryGray)
         ) {
             Column(
@@ -51,7 +51,7 @@ fun ProductItem(product: Product) {
                 AsyncImage(
                     model = product.image,
                     contentDescription = null, modifier = Modifier
-                        .size(180.dp)
+                        .size(160.dp)
                         .padding(2.dp)
                         .align(Alignment.CenterHorizontally),
                     contentScale = ContentScale.Fit,

@@ -10,10 +10,12 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
@@ -42,8 +44,8 @@ fun CollectionItem(collection: Collection) {
     Surface(shape = RoundedCornerShape(30.dp), shadowElevation = 6.dp) {
         Row(
             modifier = Modifier
-                .height(150.dp)
-                .fillMaxWidth()
+                .heightIn(min = 150.dp, max = 155.dp)
+                .widthIn(min = 335.dp, max = 340.dp)
                 .background(Color.White)
         ) {
             val imageSize = 110.dp
@@ -89,13 +91,15 @@ fun CollectionItem(collection: Collection) {
             ) {
                 Column{
                     Text(
+                        modifier = Modifier.fillMaxWidth(),
                         text = collection.name,
                         color = Color.Black,
                         fontSize = 35.sp,
                         fontWeight = FontWeight(550),
                         textAlign = TextAlign.Center,
-                        overflow = TextOverflow.Ellipsis,
-                        lineHeight = 20.sp
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis
+
                     )
                 }
             }

@@ -6,6 +6,7 @@ import java.math.BigDecimal
 
 val sampleCollections: List<Collection> = listOf(
     Collection(name = "Matuê", "https://i.imgur.com/yyyRJch.png"),
+    Collection(name = "Wiu", "https://i.imgur.com/ZtOGRsG.png"),
     Collection(name = "Teto", "https://i.imgur.com/rGqOYzO.png")
 )
 
@@ -56,7 +57,7 @@ val sampleCalcas = listOf(
 
 val sampleProducts = listOf(
     Product(
-        name = "Moletom",
+        name = "Moletom Testando Duas linhas",
         price = BigDecimal("299.99"),
         image = "https://i.imgur.com/Eh7aXYz.png"
     ),
