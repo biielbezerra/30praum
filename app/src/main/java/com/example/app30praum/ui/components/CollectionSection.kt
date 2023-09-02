@@ -33,8 +33,8 @@ fun CollectionSection(
                     end = 16.dp
                 ),
             text = title,
-            fontSize = 20.sp,
-            fontWeight = FontWeight(400)
+            fontSize = 25.sp,
+            fontWeight = FontWeight(550)
         )
         LazyRow(
             modifier = Modifier
